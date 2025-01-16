@@ -7,3 +7,11 @@
   2. Pictures with tittle
   3. Tables with tittle
   4. Subtittle with custom setting
+
+
+## Env setting
+
+  node install
+
+## Test
+  node testRepoter.js
