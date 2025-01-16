@@ -33,6 +33,10 @@ class Repoter {
                 "binary"
             );
 
+            if (tittleLevel == 0) {
+                console.warn("Without arg tittleLevel, actions about tittles will be abandon!")
+            }
+
         }
 
         // Unzip the content of the file
