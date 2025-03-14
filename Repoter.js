@@ -103,7 +103,7 @@ class Repoter {
     }
 
     // Save file
-    saveFile() {
+    saveFile({ filepath = ""} = {}) {
         if (!this.renderFlag) {
             this.render()
         }
@@ -126,7 +126,13 @@ class Repoter {
             zipData.file("word/document.xml", cleanedDocumentXml);
 
             // 重新生成并保存为 docx 文件
-            let outputPath = path.resolve(__dirname, 'OutputFile.docx');
+            let outputPath = ""
+            if(filepath != ""){
+                outputPath = filepath
+            }else{
+                outputPath = path.resolve(__dirname, 'OutputFile.docx');
+            }
+            
             let newDocxData = zipData.generate({ type: 'nodebuffer' });
             fs.writeFileSync(outputPath, newDocxData);
 
